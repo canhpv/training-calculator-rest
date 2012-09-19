@@ -6,7 +6,7 @@
     <artifactId>ecms-core</artifactId>
     <version>4.0.0.Alpha1-SNAPSHOT</version>
   </parent>
-  <artifactId>exo-ecms-core-webapp</artifactId>  
+  <artifactId>training-calculator-rest</artifactId>  
   <name>Plus Operation Rest</name>
   <description>plus operation</description>
   <packaging>jar</packaging>
