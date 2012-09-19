@@ -29,15 +29,50 @@ import org.exoplatform.services.rest.resource.ResourceContainer;
  *          canhpv@exoplatform.com
  * Sep 17, 2012  
  */
-//http://localhost:8080/ecmdemo/rest-ecmdemo/rest/1/2
+
 @Path("/rest/")
 public class RestInfo implements ResourceContainer{
+//http://localhost:8080/ecmdemo/rest-ecmdemo/rest/addition/1/2  
 @GET
-@Path("/{a}/{b}")
+@Path("/addition/{a}/{b}")
 @Produces("text/plain")
 public String plusOperation(@PathParam("a")
 String a, @PathParam("b")
 String b) {
  return String.valueOf("You get: "+ (Integer.parseInt(a) + Integer.parseInt(b)));
-}  
+}
+//http://localhost:8080/ecmdemo/rest-ecmdemo/rest/substraction/1/2
+@GET
+@Path("/substraction/{a}/{b}")
+@Produces("text/plain")
+public String subOperation(@PathParam("a")
+String a, @PathParam("b")
+String b) {
+ return String.valueOf("You get: "+ (Integer.parseInt(a) - Integer.parseInt(b)));
+}
+
+//http://localhost:8080/ecmdemo/rest-ecmdemo/rest/multiplication/1/2
+@GET
+@Path("/multiplication/{a}/{b}")
+@Produces("text/plain")
+public String multiOperation(@PathParam("a")
+String a, @PathParam("b")
+String b) {
+ return String.valueOf("You get: "+ (Integer.parseInt(a) * Integer.parseInt(b)));
+}
+
+//http://localhost:8080/ecmdemo/rest-ecmdemo/rest/division/1/2
+@GET
+@Path("/division/{a}/{b}")
+@Produces("text/plain")
+public String divOperation(@PathParam("a")
+String a, @PathParam("b")
+String b) {
+  if (Integer.parseInt(b) == 0){
+    return String.valueOf("You get: NaN");
+  }else{
+    return String.valueOf("You get: "+ (Integer.parseInt(a) / Integer.parseInt(b)));
+  }
+}
+
 }
